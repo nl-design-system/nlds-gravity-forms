@@ -8,5 +8,14 @@
     "nl-design-system",
     "gravity-forms"
   ],
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "@utrecht/components": "3.0.1-alpha.24",
+    "rimraf": "3.0.2",
+    "sass": "1.69.5"
+  },
+  "scripts": {
+    "build": "sass src/:dist/ --load-path=node_modules/ --no-source-map",
+    "clean": "rimraf dist/"
+  }
 }

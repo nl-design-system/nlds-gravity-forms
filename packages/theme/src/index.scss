@@ -1,0 +1,902 @@
+/**
+ * @license EUPL-1.2
+ * Copyright (c) 2024 Gemeente Utrecht
+ */
+
+@import "@utrecht/components/alert/css/mixin";
+@import "@utrecht/components/checkbox/css/mixin";
+@import "@utrecht/components/form-field/css/mixin";
+@import "@utrecht/components/form-field-error-message/css/mixin";
+@import "@utrecht/components/form-label/css/mixin";
+@import "@utrecht/components/heading-2/css/mixin";
+@import "@utrecht/components/link/css/mixin";
+@import "@utrecht/components/paragraph/css/mixin";
+@import "@utrecht/components/radio-button/css/mixin";
+@import "@utrecht/components/select/css/mixin";
+@import "@utrecht/components/textarea/css/mixin";
+@import "@utrecht/components/textbox/css/mixin";
+
+/* https://docs.gravityforms.com/html-field/ */
+
+$debug: false !default;
+
+@mixin debug-block {
+  @if $debug {
+    & {
+      outline: 1px solid red;
+    }
+  }
+}
+
+@mixin debug-inline {
+  @if $debug {
+    & {
+      color: red;
+    }
+  }
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield_html {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/number-field/#h-container */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_number {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/number-field/#h-input */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_number input {
+  @include utrecht-textbox;
+  @include utrecht-textbox--numeric;
+  @include utrecht-textbox--html-input;
+}
+
+/* https://docs.gravityforms.com/number-field/#h-range-instructions */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_number div.instruction {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/multi-select-field/#h-container */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_multiselect {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/multi-select-field/#h-field */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_multiselect select {
+  @include utrecht-select;
+  @include utrecht-select--html-select;
+}
+
+/* https://docs.gravityforms.com/multi-select-field/#h-items */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_multiselect select option {
+  /* no styles */
+}
+
+/* https://docs.gravityforms.com/paragraph-text-field-2/#h-container */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_textarea {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/paragraph-text-field-2/#h-input */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_textarea textarea {
+  @include utrecht-textarea;
+  @include utrecht-textarea--html-textarea;
+}
+
+/* https://docs.gravityforms.com/paragraph-text-field-2/#h-maximum-characters-counter */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_textarea .charleft {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/section-break-css/#h-container */
+
+body .gform_wrapper .gform_body .gform_fields .gsection {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/section-break-css/#h-title */
+
+body .gform_wrapper .gform_body .gform_fields .gsection .gsection_title {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/section-break-css/#h-description */
+
+body .gform_wrapper .gform_body .gform_fields .gsection .gsection_description {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/checkboxes-field/#h-list */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/checkboxes-field/#h-items */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/checkboxes-field/#h-labels */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li label {
+  @include utrecht-form-label;
+  @include utrecht-form-label--checkbox;
+}
+
+/* https://docs.gravityforms.com/checkboxes-field/#h-inputs */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li input[type="checkbox"] {
+  @include utrecht-checkbox;
+  @include utrecht-checkbox--html-input;
+}
+
+/* https://docs.gravityforms.com/radio-buttons-field/#h-list */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/radio-buttons-field/#h-choices */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio li {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/radio-buttons-field/#h-labels */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio li label {
+  @include utrecht-form-label;
+  @include utrecht-form-label--radio;
+}
+
+/* https://docs.gravityforms.com/radio-buttons-field/#h-inputs */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio li input[type="radio"] {
+  @include utrecht-radio-button;
+  @include utrecht-radio-button--html-input;
+}
+
+/* https://docs.gravityforms.com/paragraph-text-field/ */
+
+body .gform_wrapper .gform_body .gform_fields .gfield textarea {
+  @include utrecht-textarea;
+  @include utrecht-textarea--html-textarea;
+}
+
+/* https://docs.gravityforms.com/single-line-text-field/#h-container */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_text {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/single-line-text-field/#h-input */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_text input[type="text"] {
+  @include utrecht-textbox;
+  @include utrecht-textbox--html-input;
+}
+
+/* https://docs.gravityforms.com/single-line-text-field/#h-maximum-characters-counter */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_text .charleft {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/drop-down-field/#h-container */
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_select {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/drop-down-field/#h-select-box */
+
+body .gform_wrapper .gform_body .gform_fields .gfield select {
+  @include utrecht-select;
+  @include utrecht-select--html-select;
+}
+
+/* https://docs.gravityforms.com/drop-down-field/#h-items */
+
+body .gform_wrapper .gform_body .gform_fields .gfield select option {
+  /* no styles */
+}
+
+/*
+ * Advanced Fields
+ */
+
+/* https://docs.gravityforms.com/file-upload-field/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_fileupload {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_fileupload input {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_fileupload .gform_drop_instructions {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_fileupload .validation_message {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_fileupload .gform_button_select_files {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/email-field/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_email {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_email input {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/website-field/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_website {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_website input {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/address-field-2/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .address_line_1 {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_line_1 input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_line_1 label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_line_2 {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_line_2 input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_line_2 label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_city {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_city input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_city label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_state {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_state input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_state label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_zip {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_zip input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_zip label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_country {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_country select {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .address_country label {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/name-fields/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .name_first {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .name_first input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .name_first label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .name_last {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .name_last input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .name_last label {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/list-field/ */
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_listbody
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_list {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_listbody
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_list
+  table.gfield_list {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield div.ginput_container_list table.gfield_list thead th {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_list table.gfield_list colgroup col.gfield_list_col_odd {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_list table.gfield_list colgroup col.gfield_list_col_even {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_list table.gfield_list tbody tr.gfield_list_row_odd {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_list table.gfield_list tbody tr.gfield_list_row_even {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_list table.gfield_list tbody tr.gfield_list_group {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_list table.gfield_list tbody tr td.gfield_list_cell {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_list table.gfield_list tbody tr td.gfield_list_icons {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/captcha-field/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .recaptcha_widget_div .recaptcha_area {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_captcha_container {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_captcha_container .gfield_captcha {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_captcha_container .gfield_captcha_input_container input {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/time-field/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_hour {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_hour input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_hour label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_minute {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_minute input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_minute label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_ampm {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_ampm select {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/date-field/ */
+body .gform_wrapper .gform_body .gform_fields .gfield .datepicker {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_input_datepicker_icon {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_month {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_month input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_month label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_day {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_day input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_day label {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_year {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_year input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_date_year label {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/consent-field-css-selectors/ */
+body .gform_body .gform_fields .ginput_container.ginput_container_consent {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_consent_label {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .ginput_container_consent input[type="checkbox"] {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_consent_description {
+  @include debug-block;
+}
+
+/* --- Post fields */
+
+/* Post images */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_image {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_image input {
+  @include utrecht-textbox;
+}
+
+/* Post tags */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_tags {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_tags input {
+  @include utrecht-textbox;
+}
+
+/* Post excerpt */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_excerpt {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_excerpt input,
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_excerpt textarea {
+  @include utrecht-textarea;
+}
+
+/* Post body */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_content {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_content input,
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_content textarea {
+  @include utrecht-textarea;
+}
+
+/* Post title */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_title {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_post_title input {
+  @include utrecht-textbox;
+}
+
+/* Pricing fields */
+
+/* Total */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_total {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_total .ginput_total {
+  @include utrecht-textbox--read-only;
+}
+
+/* Shipping */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_singleshipping {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield_shipping .gfield_label {
+  @include utrecht-form-label;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_singleshipping .ginput_shipping_price {
+  @include utrecht-form-label;
+}
+
+/* Option */
+body .gform_wrapper .gform_body .gform_fields .gfield_price .ginput_container_select {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield_price .ginput_container_select select {
+  @include utrecht-select;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield_price .ginput_container_select select option {
+  @include debug-block;
+}
+
+/* Quantity */
+body .gform_wrapper .gform_body .gform_fields .gfield_price .ginput_container_number {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield_price .ginput_container_number input {
+  @include utrecht-textbox--numeric;
+}
+
+/* Product */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_singleproduct {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_singleproduct .ginput_product_price_label {
+  @include utrecht-form-label;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_singleproduct .ginput_product_price {
+  @include utrecht-textbox;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_singleproduct .ginput_quantity_label {
+  @include utrecht-form-label;
+}
+
+/* Credit card -- Not a field (?) */
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_creditcard {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_creditcard .gform_card_icon_container {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .gform_card_icon_container
+  .gform_card_icon_amex {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .gform_card_icon_container
+  .gform_card_icon_discover {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .gform_card_icon_container
+  .gform_card_icon_mastercard {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .gform_card_icon_container
+  .gform_card_icon_visa {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_creditcard .ginput_full input {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_creditcard .ginput_expiration_container {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .ginput_expiration_container
+  .ginput_card_expiration_month {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .ginput_expiration_container
+  .ginput_card_expiration_year {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container_creditcard .ginput_cardinfo_right {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .ginput_cardinfo_right
+  .ginput_card_security_code {
+  @include debug-block;
+}
+
+body
+  .gform_wrapper
+  .gform_body
+  .gform_fields
+  .gfield
+  .ginput_container_creditcard
+  .ginput_cardinfo_right
+  .ginput_card_security_code_icon {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/save-and-continue-link-css/ */
+body .gform_wrapper .gform_footer .gform_save_link {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/submit-button-css-selectors/ */
+body .gform_wrapper .gform_footer input[type="submit"] {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_footer input[type="image"] {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/multi-page-forms/ */
+body .gform_wrapper .gf_progressbar_wrapper {
+  @include debug-block;
+}
+
+body .gform_wrapper .gf_progressbar_wrapper .gf_progressbar_title {
+  @include utrecht-paragraph;
+}
+
+body .gform_wrapper .gf_progressbar_wrapper .gf_progressbar {
+  @include debug-block;
+}
+
+body .gform_wrapper .gf_progressbar_wrapper .gf_progressbar .gf_progressbar_percentage {
+  @include debug-block;
+}
+
+body .gform_wrapper .gf_progressbar_wrapper .gf_progressbar .gf_progressbar_percentage span {
+  @include debug-block;
+}
+
+body .gform_wrapper .gf_page_steps {
+  @include debug-block;
+}
+
+body .gform_wrapper .gf_page_steps .gf_step {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gf_page_steps .gf_step_active {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gf_page_steps .gf_step_pending {
+  @include debug-inline;
+}
+
+body .gform_wrapper .gform_page {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_page_footer {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button {
+  @include debug-block; /* @TODO Robbert - button */
+}
+
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button {
+  @include debug-block; /* @TODO Robbert - button */
+}
+
+body .gform_wrapper .gform_body .gform_page_footer .gform_button {
+  @include debug-block; /* @TODO Robbert - button */
+}
+
+/* https://docs.gravityforms.com/validation-errors/ */
+body .gform_wrapper .validation_error {
+  @include debug-block;
+}
+
+// @TODO: wrapper class that signifies that the field has an error
+ body .gform_wrapper .gform_body .gform_fields .gfield_error {
+  @include debug-block;
+
+  // Add your fields here
+   .ginput_container_textarea textarea {
+    @include utrecht-textarea--invalid;
+  }
+}
+
+body .gform_wrapper .gform_body .gform_fields .gform_validation_errors {
+  @include utrecht-alert-type("error");
+}
+
+body .gform_wrapper .gform_body .gform_fields .gform_validation_error_link {
+  @include utrecht-link;
+  @include utrecht-link--html-a;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield_error .validation_message {
+  @include utrecht-form-field-error-message;
+}
+
+/* https://docs.gravityforms.com/form-confirmation/ */
+body .gform_confirmation_wrapper .gform_confirmation_message {
+  @include utrecht-alert-type("ok");
+}
+
+/* https://docs.gravityforms.com/form-footer/ */
+body .gform_wrapper .gform_footer {
+  @include debug-block;
+}
+
+/* https://docs.gravityforms.com/form-body/ */
+body .gform_wrapper .gform_body {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_container {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description {
+  @include utrecht-form-field__description;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label .gfield_required {
+  @include debug-inline;
+}
+
+/* https://docs.gravityforms.com/form-heading/ */
+body .gform_wrapper .gform_heading {
+  @include debug-block;
+}
+
+body .gform_wrapper .gform_heading .gform_title {
+  @include utrecht-heading-2;
+}
+
+body .gform_wrapper .gform_heading .gform_description {
+  @include utrecht-paragraph;
+}
+
+/* https://docs.gravityforms.com/form-wrapper/ */
+body .gform_wrapper {
+  @include debug-block;
+}
