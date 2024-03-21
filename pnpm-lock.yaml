@@ -247,8 +247,8 @@ importers:
         specifier: workspace:*
         version: link:../web-components-stencil
       '@storybook/addon-a11y':
-        specifier: 7.6.12
-        version: 7.6.12
+        specifier: 8.0.2
+        version: 8.0.2
       '@storybook/addon-actions':
         specifier: 7.6.12
         version: 7.6.12
@@ -4370,10 +4370,10 @@ packages:
       '@stencil/core': 4.12.0
     dev: true
 
-  /@storybook/addon-a11y@7.6.12:
-    resolution: {integrity: sha512-Y4vGTI7VslAt/PSpZZsFieceOkXHLagTsz9Zba4s1cw7Dd8KFB1+NcjkMmo6BhGq7K17JQljosXSbGhOoqrMVg==}
+  /@storybook/addon-a11y@8.0.2:
+    resolution: {integrity: sha512-BmJpEf6olu6Eb6fzG+agui6QhylHe/T7UIax3aowLAKmmatA9LkFI1wam6tvddaAoSiWQK5oPFQVNVZ7VWBtww==}
     dependencies:
-      '@storybook/addon-highlight': 7.6.12
+      '@storybook/addon-highlight': 8.0.2
       axe-core: 4.7.2
     dev: true
 
@@ -4422,8 +4422,8 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-highlight@7.6.12:
-    resolution: {integrity: sha512-rWNEyBhwncXEDd9z7l67BLBIPqn0SRI/CJpZvCSF5KLWrVaoSEDF8INavmbikd1JBMcajJ28Ur6NsGj+eJjJiw==}
+  /@storybook/addon-highlight@8.0.2:
+    resolution: {integrity: sha512-V9BJiE8a3ZbWoW5vsWCdpbCW1kNbc2fz9fj1okVqNtVUT2Hlfk0IYkMpL+7UInhNAY+NXFSFxtgxWYYsCtFs0Q==}
     dependencies:
       '@storybook/global': 5.0.0
     dev: true
@@ -6441,9 +6441,6 @@ packages:
 
   /ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
-    peerDependenciesMeta:
-      ajv:
-        optional: true
     dependencies:
       ajv: 8.12.0
     dev: true
