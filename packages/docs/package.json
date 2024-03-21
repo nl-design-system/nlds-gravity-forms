@@ -1,0 +1,14 @@
+{
+  "name": "@nl-design-system-unstable/documentation",
+  "version": "0.0.2-alpha.94",
+  "author": "Community for NL Design System",
+  "description": "Documentation for combining NL Design System with Gavity Forms",
+  "keywords": [
+    "nl-design-system"
+  ],
+  "private": false,
+  "license": "CC0-1.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}
