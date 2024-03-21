@@ -33,8 +33,8 @@
     "require-version": "error",
     "scripts-type": "error",
     "valid-values-author": "off",
-    "valid-values-license": ["error", ["EUPL-1.2"]],
-    "valid-values-name-scope": ["error", ["@example"]],
+    "valid-values-license": ["error", ["CC0-1.0", "EUPL-1.2"]],
+    "valid-values-name-scope": ["error", ["@nl-design-system-community"]],
     "valid-values-private": "off",
     "version-format": "error",
     "version-type": "error"
