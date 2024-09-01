@@ -99,7 +99,7 @@ jobs:
           pnpm run --if-present test-build
 
       - name: "Retain build artifact: storybook"
-        uses: actions/upload-artifact@v4.3.1
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: storybook
           path: packages/storybook/dist/
